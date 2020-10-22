@@ -8,6 +8,7 @@
     "node": "10.15.3"
   },
   "scripts": {
+    "cass": "node server/server.js",
     "build": "webpack -p",
     "watch": "webpack --watch",
     "start": "node database/seed/reviews-seeder.js &&  node server/server.js",
@@ -45,6 +46,7 @@
     "@material-ui/icons": "^4.9.1",
     "axios": "^0.20.0",
     "body-parser": "^1.19.0",
+    "cassandra-driver": "^4.6.0",
     "compression": "^1.7.4",
     "dompurify": "^2.1.1",
     "express": "^4.17.1",

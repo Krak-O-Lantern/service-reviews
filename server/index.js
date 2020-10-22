@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const compression = require('compression');
-const { User } = require('../database/models/user.js');
+const client = require('../database/index.js');
 
 const app = express();
 const PUBLIC_PATH = path.resolve(__dirname, '..', 'public');
@@ -12,20 +12,20 @@ app.use(compression());
 app.use(bodyParser.json());
 app.use(express.static(PUBLIC_PATH));
 
+// need to rebuild for specific route
 app.get('/api/reviews', (req, res) => {
-  User.find()
-    .then((result) => res.send(result))
-    .catch((err) => { console.log(err); res.send(500); });
+  client.execute('SELECT * FROM listings.reviews where listingid=1')
+    .then((result) => {
+      const row = result.rows;
+      const data = { user_data: row };
+      res.send(data);
+    })
+    .catch((err) => res.send(500, err));
 });
 
-app.get('/api/reviews/:listing_id', (req, res) => {
-  const id = req.params.listing_id;
-  User.findOne({ listing_id: id })
-    .then((results) => res.send(results))
-    .catch((err) => {
-      console.log(err);
-      res.send(500);
-    });
-});
+// app.get('/api/reviews/:listing_id', (req, res) => {
+//   const id = req.params.listing_id;
+//   res.send(200);
+// });
 
 module.exports = app;
