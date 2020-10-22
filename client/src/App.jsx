@@ -24,7 +24,10 @@ function App() {
   const [isSearched, setIsSearched] = useState(false);
 
   useEffect(() => {
-    axios.get('/api/reviews')
+    const url = window.location.href;
+    const listingIdStart = url.indexOf('/rooms/') + 7;
+    const listingId = url.slice(listingIdStart, url.length - 1);
+    axios.get(`/api/reviews/${listingId}`)
       .then(({ data }) => setData(data))
       .catch((err) => console.log(err));
   }, []);
