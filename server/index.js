@@ -10,11 +10,10 @@ const PUBLIC_PATH = path.resolve(__dirname, '..', 'public');
 
 app.use(compression());
 app.use(bodyParser.json());
-app.use(express.static(PUBLIC_PATH));
+app.use('/rooms/:num', express.static(PUBLIC_PATH));
 
-// need to rebuild for specific route
-app.get('/api/reviews', (req, res) => {
-  client.execute('SELECT * FROM listings.reviews where listingid=1')
+app.get('/api/reviews/:num', (req, res) => {
+  client.execute(`SELECT * FROM listings.reviews where listingid=${req.params.num}`)
     .then((result) => {
       const row = result.rows;
       const data = { user_data: row };
@@ -22,10 +21,5 @@ app.get('/api/reviews', (req, res) => {
     })
     .catch((err) => res.send(500, err));
 });
-
-// app.get('/api/reviews/:listing_id', (req, res) => {
-//   const id = req.params.listing_id;
-//   res.send(200);
-// });
 
 module.exports = app;
