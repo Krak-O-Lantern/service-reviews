@@ -24,8 +24,7 @@ function App() {
   const [isSearched, setIsSearched] = useState(false);
 
   useEffect(() => {
-    const ranId = Math.floor(Math.random() * 100 + 1);
-    axios.get(`/api/reviews/${ranId}`)
+    axios.get('/api/reviews')
       .then(({ data }) => setData(data))
       .catch((err) => console.log(err));
   }, []);
