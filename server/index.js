@@ -1,13 +1,14 @@
 /* eslint-disable no-console */
 const express = require('express');
 const path = require('path');
-const compression = require('compression');
+// const compression = require('compression');
 const client = require('../database/index.js');
+require('newrelic');
 
 const app = express();
 const PUBLIC_PATH = path.resolve(__dirname, '..', 'public');
 
-app.use(compression());
+// app.use(compression());
 app.use('/rooms/:num', express.static(PUBLIC_PATH));
 
 app.get('/api/reviews/:num', (req, res) => {

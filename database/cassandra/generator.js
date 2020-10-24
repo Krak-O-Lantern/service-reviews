@@ -19,9 +19,8 @@ const randomDate = (start, end) => {
   return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 };
 
-const createReview = (reviewNum, line) => {
+const createReview = (line) => {
   const picNum = randomImg();
-  const id = reviewNum;
   const listingId = line;
   const username = faker.name.firstName();
   const image = `https://souperhost.s3-us-west-2.amazonaws.com/0${picNum}.jpg`;
@@ -33,7 +32,7 @@ const createReview = (reviewNum, line) => {
   const location = Math.floor(Math.random() * 5) + 1;
   const value = Math.floor(Math.random() * 5) + 1;
   const createdAt = randomDate(new Date(2020, 7, 1), new Date());
-  return `${id},${listingId},${username},${image},${review},${cleanliness},${communication},${checkin},${accuracy},${location},${value},${createdAt}\n`;
+  return `${listingId},${username},${image},${review},${cleanliness},${communication},${checkin},${accuracy},${location},${value},${createdAt}\n`;
 };
 
 const write = (writer, data) => {
@@ -51,18 +50,18 @@ const run = async () => {
   const max = lines;
   let current = 1;
   let currentRev = 1;
-  write_stream.write('id,listingId,username,image,review,cleanliness,communication,checkin,accuracy,location,value,createdAt\n', 'utf-8');
+  write_stream.write('listingId,username,image,review,cleanliness,communication,checkin,accuracy,location,value,createdAt\n', 'utf-8');
   while (current <= max) {
-    let rando = Math.floor(Math.random() * 2) + 1;
+    let rando = Math.floor(Math.random() * 4) + 1;
     for (let i = 0; i < rando; i += 1) {
-      const review = createReview(currentRev, current);
+      const review = createReview(current);
       const promise = write(write_stream, review);
       // since drain happens rarely, awaiting each write call is really slow.
       if (promise) {
         // we got a drain event, therefore we wait
         await promise;
       }
-      currentRev += 1;
+      // currentRev += 1;
     }
     current += 1;
   }
