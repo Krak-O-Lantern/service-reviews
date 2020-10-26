@@ -1,5 +1,4 @@
-create table flipped(
-  id int,
+create table reviews(
   listingid int,
   username text,
   image text,
@@ -11,5 +10,5 @@ create table flipped(
   location int,
   value int,
   createdAt text,
-  primary key(listingid, id)
+  primary key(listingid, createdAt)
 );
