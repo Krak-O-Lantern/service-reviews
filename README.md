@@ -6,13 +6,13 @@
 
 # Reviews
 
-> This react project mocks the "More places to stay" image carousel. The client fetches data with express connecting it to a mongoDB server.
+> This react project mocks a review module. The client fetches data with express connecting it to a CassandraDB server.
 
 ## Related Projects
 
-  - https://github.com/
-  - https://github.com/
-  - https://github.com/
+  - https://github.com/Krak-O-Lantern/Calendar
+  - https://github.com/Krak-O-Lantern/photoGallery-service
+  - https://github.com/Krak-O-Lantern/carousel-service
 
 ## Table of Contents
 
