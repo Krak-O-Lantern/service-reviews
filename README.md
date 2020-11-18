@@ -17,21 +17,21 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 ## Getting Started
 
 clone this repository
-'git clone https://github.com/Krak-O-Lantern/service-reviews.git'
+`$ git clone https://github.com/Krak-O-Lantern/service-reviews.git`
 
 Install dependencies
-'npm install'
+`npm install`
 
 Seed database if necessary
 
-'npm run seed'
+`npm run seed`
 > creates a csv file with reviews for 10,000,000 listings
 
 If using Cassandra...
 #Todo
 
 Start your server
-'npm run cass'
+`npm run cass`
 > start the server on port:3002
 
 ## Related Projects
@@ -44,4 +44,3 @@ Start your server
 
 1. [Overview](#reviews)
 2. [Requirements](#requirements)
-3. [Getting Started](#Getting Started)
