@@ -1,8 +1,8 @@
-# Krak-O-Lantern Reviews Module
-
 [![souperhost-3000](https://circleci.com/gh/Krak-O-Lantern/service-reviews.svg?style=shield)](https://circleci.com/gh//Krak-O-Lantern/service-reviews)
 
-# Reviews
+# Krak-O-Lantern Reviews Module
+
+# Overview
 
 > Krak-O-Lantern is an open source accomodation booking application using service-oriented architecture. This is legacy code originally for MongoDB reworked for CassandraDB.
 
@@ -42,5 +42,5 @@ Start your server
 
 ## Table of Contents
 
-1. [Overview](#reviews)
+1. [Overview](#Overview)
 2. [Requirements](#requirements)
