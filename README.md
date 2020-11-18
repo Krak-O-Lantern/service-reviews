@@ -44,4 +44,4 @@ Start your server
 
 1. [Overview](#reviews)
 2. [Requirements](#requirements)
-3. [Getting Started](#getting)
+3. [Getting Started](#Getting Started)
