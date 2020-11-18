@@ -1,44 +1,47 @@
-# service-chris
+# Krak-O-Lantern Reviews Module
 
 [![souperhost-3000](https://circleci.com/gh/Krak-O-Lantern/service-reviews.svg?style=shield)](https://circleci.com/gh//Krak-O-Lantern/service-reviews)
 
-# Readme: Front-End Capstone Project
-
 # Reviews
 
-> This react project mocks a review module. The client fetches data with express connecting it to a CassandraDB server.
-
-## Related Projects
-
-  - https://github.com/Krak-O-Lantern/Calendar
-  - https://github.com/Krak-O-Lantern/photoGallery-service
-  - https://github.com/Krak-O-Lantern/carousel-service
-
-## Table of Contents
-
-1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
-
-## Usage
-
-> npm run seed to seed the database
-> npm run start to start the server on port:3002
+> Krak-O-Lantern is an open source accomodation booking application using service-oriented architecture. This is legacy code originally for MongoDB reworked for CassandraDB.
 
 ## Requirements
 
 An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 - Node 6.13.0
-- etc
+- CassandraDB 3.11.9
+- or MongoDB 4.4.1
 
-## Development
+## Getting Started
 
-### Installing Dependencies
+clone this repository
+'git clone https://github.com/Krak-O-Lantern/service-reviews.git'
 
-From within the root directory:
+Install dependencies
+'npm install'
 
-```sh
-npm install -g webpack
-npm install
-```
+Seed database if necessary
+
+'npm run seed'
+> creates a csv file with reviews for 10,000,000 listings
+
+If using Cassandra...
+#Todo
+
+Start your server
+'npm run cass'
+> start the server on port:3002
+
+## Related Projects
+
+  - [Calendar](https://github.com/Krak-O-Lantern/Calendar)
+  - [Gallery](https://github.com/Krak-O-Lantern/photoGallery-service)
+  - [Carousel](https://github.com/Krak-O-Lantern/carousel-service)
+
+## Table of Contents
+
+1. [Overview](#reviews)
+2. [Requirements](#requirements)
+3. [Getting Started](#getting started)
