@@ -1,6 +1,6 @@
 [![souperhost-3000](https://circleci.com/gh/Krak-O-Lantern/service-reviews.svg?style=shield)](https://circleci.com/gh//Krak-O-Lantern/service-reviews)
 
-# Krak-O-Lantern Reviews Module
+# CloudBnB Reviews Module
 
 # Overview
 
